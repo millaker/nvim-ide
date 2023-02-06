@@ -13,9 +13,13 @@ vim.g.mapleader = " "
 --   visual_mode = "v",
 --   visual_block_mode = "x",
 --   term_mode = "t",
---   command_mode = "c",
+--   command_moe = "c",
 
 -- Normal --
+-- Navigate to start/end
+keymap("n", "<S-l>", "$",  opts)
+keymap("n", "<S-h>", "0",  opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -28,9 +32,9 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- Navigate tabs
+keymap("n", "<leader><S-l>", "gt", opts)
+keymap("n", "<leader><S-h>", "gT", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -43,7 +47,7 @@ keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
